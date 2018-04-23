@@ -6,7 +6,7 @@
 /*   By: lchappon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 14:22:26 by lchappon          #+#    #+#             */
-/*   Updated: 2017/11/16 12:41:33 by lchappon         ###   ########.fr       */
+/*   Updated: 2018/04/23 19:50:03 by lchappon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,25 @@ int		ft_atoi(const char *str)
 {
 	int		i;
 	int		res;
-	int		is_neg;
+	int		neg;
 
 	i = 0;
 	res = 0;
+	neg = 1;
 	while (str[i] && (str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
-				|| str[i] == '\v' || str[i] == '\f' || str[i] == ' '
-				|| ((str[i] == '+' || str[i] == '-')
-					&& (str[i + 1] >= '0' && str[i + 1] <= '9'))))
+				|| str[i] == '\v' || str[i] == '\f' || str[i] == ' '))
 		i++;
-	is_neg = (str[i - 1] == '-' ? -1 : 1);
-	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	if (str[i] == '+' || str[i] == '-')
 	{
-		res += str[i] - 48;
-		if (str[i + 1] && (str[i + 1] >= '0' && str[i + 1] <= '9'))
-			res *= 10;
+		if (str[i] == '-')
+			neg = -1;
 		i++;
 	}
-	return (res * is_neg);
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		res *= 10;
+		res += str[i] - 48;
+		i++;
+	}
+	return (res * neg);
 }

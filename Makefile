@@ -6,9 +6,11 @@
 #    By: lchappon <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:08:00 by lchappon          #+#    #+#              #
-#    Updated: 2018/04/21 18:55:53 by lchappon         ###   ########.fr        #
+#    Updated: 2018/04/24 18:26:05 by lchappon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.PHONY: all clean fclean re
 
 NAME = libft.a
 
@@ -33,12 +35,14 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME) :
-	gcc -c $(FLAGS) -I $(INC) $(SRC)
+$(NAME) : $(SRC) $(INC)
+	$(CC) -c $(CFLAGS) -I $(INC) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
@@ -49,5 +53,3 @@ fclean: clean
 	/bin/rm -rf $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: lchappon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:41:57 by lchappon          #+#    #+#             */
-/*   Updated: 2018/04/18 22:37:48 by lchappon         ###   ########.fr       */
+/*   Updated: 2018/07/09 18:47:53 by lchappon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,8 @@ int					ft_nbrlen(int n);
 int					ft_sqrt(int nb);
 int					ft_recursive_power(int nb, int power);
 void				ft_swap(int *a, int *b);
+
+char				*ft_strtolower(char *s);
+char				*ft_strtoupper(char *s);
 
 #endif

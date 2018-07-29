@@ -6,7 +6,7 @@
 #    By: lchappon <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:08:00 by lchappon          #+#    #+#              #
-#    Updated: 2018/04/24 18:26:05 by lchappon         ###   ########.fr        #
+#    Updated: 2018/07/09 18:46:46 by lchappon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_ismin.c ft_ismaj.c ft_abs.c ft_nbrlen.c ft_sqrt.c \
 	  ft_recursive_power.c ft_swap.c \
 	  get_next_line.c \
+	  ft_strtolower.c ft_strtoupper.c \
 
 OBJ = $(SRC:.c=.o)
 
